@@ -1,5 +1,4 @@
 import readlineSync from 'readline-sync';
-
 export const dialogWithTheUser = () => {
 console.log('brain-games');
 console.log('Welcome to the Brain Games!');
