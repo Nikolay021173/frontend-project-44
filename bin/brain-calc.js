@@ -5,7 +5,7 @@ import * as readlineSync from 'readline-sync';
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const dialogWithTheUser = () => {
-  console.log('brain-even');
+  console.log('brain-calc');
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -15,6 +15,7 @@ const dialogWithTheUser = () => {
     const num2 = getRandomInt(0, 100);
     const operators = ['+', '-', '*', '/'];
     const op = operators[Math.floor(Math.random() * operators.length)];
+    // eslint-disable-next-line no-eval
     const result = eval(`${num1}${op}${num2}`);
     console.log(`Question: ${num1}${op}${num2}`);
     const answer = readlineSync.question('Your answer: ');
