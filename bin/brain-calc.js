@@ -17,7 +17,7 @@ const dialogWithTheUser = () => {
     const op = operators[Math.floor(Math.random() * operators.length)];
     // eslint-disable-next-line no-eval
     const result = eval(`${num1}${op}${num2}`);
-    console.log(`Question: ${num1}${op}${num2}`);
+    console.log(`Question: ${num1} ${op} ${num2}`);
     const answer = readlineSync.question('Your answer: ');
     if (result === Number(answer)) {
       console.log('Correct!');
