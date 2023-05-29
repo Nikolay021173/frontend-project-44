@@ -15,11 +15,17 @@ const dialogWithTheUser = () => {
     const num2 = getRandomInt(0, 100);
     const operators = ['+', '-', '*', '/'];
     const op = operators[Math.floor(Math.random() * operators.length)];
+    let result;
+    if (op === '/') {
+      // eslint-disable-next-line no-eval
+      result = eval(`${num1}${op}${num2}`).toFixed(2);
+    } else {
     // eslint-disable-next-line no-eval
-    const result = eval(`${num1}${op}${num2}`);
+      result = eval(`${num1}${op}${num2}`);
+    }
     console.log(`Question: ${num1} ${op} ${num2}`);
     const answer = readlineSync.question('Your answer: ');
-    if (result === Number(answer)) {
+    if (result === Number(answer) || result === Number(answer).toFixed(2)) {
       console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
