@@ -3,4 +3,4 @@
 import { brainCalc, greeting } from '../src/index.js';
 
 greeting();
-brainCalc();
+brainCalc('What is the result of the expression?');

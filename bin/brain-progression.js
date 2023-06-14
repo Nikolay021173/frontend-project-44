@@ -3,4 +3,4 @@
 import { brainProgression, greeting } from '../src/index.js';
 
 greeting();
-brainProgression();
+brainProgression('What number is missing in the progression?');

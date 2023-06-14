@@ -3,4 +3,4 @@
 import { brainGcd, greeting } from '../src/index.js';
 
 greeting();
-brainGcd();
+brainGcd('Find the greatest common divisor of given numbers.');

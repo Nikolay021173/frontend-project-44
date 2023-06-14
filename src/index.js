@@ -34,10 +34,10 @@ export const greeting = () => {
   console.log('Welcome to the Brain Games!');
 };
 
-export const brainEven = () => {
+export const brainEven = (ruleOfTheGame) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(/* 'Answer "yes" if the number is even, otherwise answer "no".' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomInt(0, 100);
     console.log(`Question: ${num}`);
@@ -61,10 +61,10 @@ export const brainEven = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const brainCalc = () => {
+export const brainCalc = (ruleOfTheGame) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('What is the result of the expression?');
+  console.log(/* 'What is the result of the expression?' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {
     const num1 = getRandomInt(0, 100);
     const num2 = getRandomInt(0, 100);
@@ -91,10 +91,10 @@ export const brainCalc = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const brainPrime = () => {
-  const name = readlineSync.question('May I have your name? ');
+export const brainPrime = (ruleOfTheGame) => {
+  const name = readlineSync.question( 'May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no"');
+  console.log(/* 'Answer "yes" if given number is prime. Otherwise answer "no"' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {
     const num = getRandomInt(2, 100);
     console.log(`Question: ${num}`);
@@ -118,10 +118,10 @@ export const brainPrime = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const brainProgression = () => {
+export const brainProgression = (ruleOfTheGame) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('What number is missing in the progression?');
+  console.log(/* 'What number is missing in the progression?' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {
     const a = arrGenerator();
     const index = a.indexOf('..');
@@ -144,10 +144,10 @@ export const brainProgression = () => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export const brainGcd = () => {
+export const brainGcd = (ruleOfTheGame) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log(/* 'Find the greatest common divisor of given numbers.' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {
     const num1 = getRandomInt(0, 100);
     const num2 = getRandomInt(0, 100);
