@@ -2,5 +2,5 @@
 
 import { brainEven, greeting } from '../src/index.js';
 
-greeting();
+greeting('brain-even');
 brainEven('Answer "yes" if the number is even, otherwise answer "no".');

@@ -2,5 +2,5 @@
 
 import { brainCalc, greeting } from '../src/index.js';
 
-greeting();
+greeting('brain-calc');
 brainCalc('What is the result of the expression?');

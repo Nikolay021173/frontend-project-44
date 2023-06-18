@@ -26,11 +26,11 @@ const arrGenerator = () => {
     arr.push(num += d);
   }
   arr[getRandomInt(0, n)] = '..';
-  return arr;
+  return arr.join(' ').split(' ');
 };
 
-export const greeting = () => {
-  console.log('brain-even');
+export const greeting = (name) => {
+  console.log(name/* 'brain-even' */);
   console.log('Welcome to the Brain Games!');
 };
 
@@ -92,7 +92,7 @@ export const brainCalc = (ruleOfTheGame) => {
 };
 
 export const brainPrime = (ruleOfTheGame) => {
-  const name = readlineSync.question( 'May I have your name? ');
+  const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(/* 'Answer "yes" if given number is prime. Otherwise answer "no"' */ruleOfTheGame);
   for (let i = 0; i < 3; i += 1) {

@@ -2,5 +2,5 @@
 
 import { brainPrime, greeting } from '../src/index.js';
 
-greeting();
+greeting('brain-prime');
 brainPrime('Answer "yes" if given number is prime. Otherwise answer "no"');

@@ -2,5 +2,5 @@
 
 import { brainProgression, greeting } from '../src/index.js';
 
-greeting();
+greeting('brain-progression');
 brainProgression('What number is missing in the progression?');
