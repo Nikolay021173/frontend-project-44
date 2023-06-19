@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { brainGcd, greeting } from '../src/index.js';
+import { brainGames, greeting } from '../src/index.js';
 
-greeting('brain-gcd');
-brainGcd('Find the greatest common divisor of given numbers.');
+greeting('brain-gcd', 'brainGcd');
+brainGames('Find the greatest common divisor of given numbers.', 'brainGcd');

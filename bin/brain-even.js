@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { brainEven, greeting } from '../src/index.js';
+import { brainGames, greeting } from '../src/index.js';
 
-greeting('brain-even');
-brainEven('Answer "yes" if the number is even, otherwise answer "no".');
+greeting('brain-even', 'brainEven');
+brainGames('Answer "yes" if the number is even, otherwise answer "no".', 'brainEven');

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { brainPrime, greeting } from '../src/index.js';
+import { brainGames, greeting } from '../src/index.js';
 
-greeting('brain-prime');
-brainPrime('Answer "yes" if given number is prime. Otherwise answer "no"');
+greeting('brain-prime', 'brainPrime');
+brainGames('Answer "yes" if given number is prime. Otherwise answer "no"', 'brainPrime');
