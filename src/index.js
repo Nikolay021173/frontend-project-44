@@ -36,107 +36,119 @@ export const greeting = (nameGame) => {
 
 // eslint-disable-next-line consistent-return
 const even = (name) => {
-  const num = getRandomInt(0, 100);
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
-  if ((num % 2 === 0 && answer === 'yes') || (num % 2 !== 0 && answer === 'no')) {
-    console.log('Correct!');
-  } else if ((num % 2 === 0 && answer === 'no')) {
-    console.log('\'no\' is wrong answer ;(. Correct answer was \'yes\'.');
-    console.log(`Let's try again, ${name}!`);
-  } else if ((num % 2 !== 0 && answer === 'yes')) {
-    console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log("input error!!!!\nAs an answer, you have to enter 'yes' or 'no'.");
-    console.log(`Let's try again, ${name}!`);
-    return 0;
+  for (let i = 0; i < 3; i += 1) {
+    const num = getRandomInt(0, 100);
+    console.log(`Question: ${num}`);
+    const answer = readlineSync.question('Your answer: ');
+    if ((num % 2 === 0 && answer === 'yes') || (num % 2 !== 0 && answer === 'no')) {
+      console.log('Correct!');
+    } else if ((num % 2 === 0 && answer === 'no')) {
+      console.log('\'no\' is wrong answer ;(. Correct answer was \'yes\'.');
+      console.log(`Let's try again, ${name}!`);
+      return;
+    } else if ((num % 2 !== 0 && answer === 'yes')) {
+      console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
+      console.log(`Let's try again, ${name}!`);
+      return;
+    } else {
+      console.log("input error!!!!\nAs an answer, you have to enter 'yes' or 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
 };
 
 // eslint-disable-next-line consistent-return
 const calc = (name) => {
-  const num1 = getRandomInt(0, 100);
-  const num2 = getRandomInt(0, 100);
-  let result;
-  const operators = ['+', '-', '*', '/'];
-  const op = operators[Math.floor(Math.random() * operators.length)];
-  if (op === '/') {
+  for (let i = 0; i < 3; i += 1) {
+    const num1 = getRandomInt(0, 100);
+    const num2 = getRandomInt(0, 100);
+    let result;
+    const operators = ['+', '-', '*', '/'];
+    const op = operators[Math.floor(Math.random() * operators.length)];
+    if (op === '/') {
     // eslint-disable-next-line no-eval
-    result = eval(`${num1}${op}${num2}`).toFixed(2);
-  } else {
+      result = eval(`${num1}${op}${num2}`).toFixed(2);
+    } else {
     // eslint-disable-next-line no-eval
-    result = eval(`${num1}${op}${num2}`);
-  }
-  console.log(`Question: ${num1} ${op} ${num2}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (result === Number(answer) || result === Number(answer).toFixed(2)) {
-    console.log('Correct!');
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
-    console.log(`Let's try again, ${name}!`);
-    return 0;
+      result = eval(`${num1}${op}${num2}`);
+    }
+    console.log(`Question: ${num1} ${op} ${num2}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (result === Number(answer) || result === Number(answer).toFixed(2)) {
+      console.log('Correct!');
+    } else {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
 };
 
 // eslint-disable-next-line consistent-return
 const prime = (name) => {
-  const num = getRandomInt(2, 100);
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
-  if ((answer === 'yes' && isPrime(num)) || (answer === 'no' && !isPrime(num))) {
-    console.log('Correct!');
-  } else if (answer === 'no' && isPrime(num)) {
-    console.log('\'no\' is wrong answer ;(. Correct answer was \'yes\'.');
-    console.log(`Let's try again, ${name}!`);
-  } else if (answer === 'yes' && !isPrime(num)) {
-    console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
-    console.log(`Let's try again, ${name}!`);
-  } else {
-    console.log("input error!!!!\nAs an answer, you have to enter 'yes' or 'no'.");
-    console.log(`Let's try again, ${name}!`);
-    return 0;
+  for (let i = 0; i < 3; i += 1) {
+    const num = getRandomInt(2, 100);
+    console.log(`Question: ${num}`);
+    const answer = readlineSync.question('Your answer: ');
+    if ((answer === 'yes' && isPrime(num)) || (answer === 'no' && !isPrime(num))) {
+      console.log('Correct!');
+    } else if (answer === 'no' && isPrime(num)) {
+      console.log('\'no\' is wrong answer ;(. Correct answer was \'yes\'.');
+      console.log(`Let's try again, ${name}!`);
+    } else if (answer === 'yes' && !isPrime(num)) {
+      console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
+      console.log(`Let's try again, ${name}!`);
+    } else {
+      console.log("input error!!!!\nAs an answer, you have to enter 'yes' or 'no'.");
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
 };
 
 // eslint-disable-next-line consistent-return
 const progression = (name) => {
-  const a = arrGenerator();
-  const index = a.indexOf('..');
-  const calcAnArrayElement = () => {
-    if (index === 0) {
-      a[index] = a[index + 1] - ((a[index + 2] - a[index + 1]));
-    } else if (index === a.length - 1) {
-      a[index] = a[index - 1] + ((a[index - 1] - a[index - 2]));
+  for (let i = 0; i < 3; i += 1) {
+    const a = arrGenerator();
+    const index = a.indexOf('..');
+    const calcAnArrayElement = () => {
+      if (index === 0) {
+        a[index] = a[index + 1] - ((a[index + 2] - a[index + 1]));
+      } else if (index === a.length - 1) {
+        a[index] = a[index - 1] + ((a[index - 1] - a[index - 2]));
+      } else {
+        a[index] = a[index - 1] + ((a[index + 1] - a[index - 1]) / 2);
+      }
+      return a[index];
+    };
+    console.log(`Question: ${a}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (calcAnArrayElement(a) === Number(answer)) {
+      console.log('Correct!');
     } else {
-      a[index] = a[index - 1] + ((a[index + 1] - a[index - 1]) / 2);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${calcAnArrayElement(a)}.`);
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
-    return a[index];
-  };
-  console.log(`Question: ${a}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (calcAnArrayElement(a) === Number(answer)) {
-    console.log('Correct!');
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${calcAnArrayElement(a)}.`);
-    console.log(`Let's try again, ${name}!`);
-    return 0;
   }
 };
 
 // eslint-disable-next-line consistent-return
 const gcDivider = (name) => {
-  const num1 = getRandomInt(0, 100);
-  const num2 = getRandomInt(0, 100);
-  const result = gcd(num1, num2);
-  console.log(`Question: ${num1} ${num2}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (result === Number(answer)) {
-    console.log('Correct!');
-  } else {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
-    console.log(`Let's try again, ${name}!`);
-    return 0;
+  for (let i = 0; i < 3; i += 1) {
+    const num1 = getRandomInt(0, 100);
+    const num2 = getRandomInt(0, 100);
+    const result = gcd(num1, num2);
+    console.log(`Question: ${num1} ${num2}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (result === Number(answer)) {
+      console.log('Correct!');
+    } else {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${result}.`);
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
   }
 };
 
@@ -144,12 +156,11 @@ export const brainGames = (ruleOfTheGame, game) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(ruleOfTheGame);
-  for (let i = 0; i < 3; i += 1) {
-    // eslint-disable-next-line no-undef, default-case
-    switch (game) {
-      case 'brainEven':
-        even(name);
-        /* num = getRandomInt(0, 100);
+  // eslint-disable-next-line no-undef, default-case
+  switch (game) {
+    case 'brainEven':
+      even(name);
+      /* num = getRandomInt(0, 100);
         console.log(`Question: ${num}`);
         answer = readlineSync.question('Your answer: ');
         if ((num % 2 === 0 && answer === 'yes') || (num % 2 !== 0 && answer === 'no')) {
@@ -167,10 +178,10 @@ export const brainGames = (ruleOfTheGame, game) => {
           console.log(`Let's try again, ${name}!`);
           return;
         } */
-        break;
-      case 'brainCalc':
-        calc(name);
-        /* num1 = getRandomInt(0, 100);
+      break;
+    case 'brainCalc':
+      calc(name);
+      /* num1 = getRandomInt(0, 100);
         num2 = getRandomInt(0, 100);
         const operators = ['+', '-', '*', '/'];
         const op = operators[Math.floor(Math.random() * operators.length)];
@@ -190,10 +201,10 @@ export const brainGames = (ruleOfTheGame, game) => {
           console.log(`Let's try again, ${name}!`);
           return;
         } */
-        break;
-      case 'brainPrime':
-        prime(name);
-        /* num = getRandomInt(2, 100);
+      break;
+    case 'brainPrime':
+      prime(name);
+      /* num = getRandomInt(2, 100);
         console.log(`Question: ${num}`);
         answer = readlineSync.question('Your answer: ');
         if ((answer === 'yes' && isPrime(num)) || (answer === 'no' && !isPrime(num))) {
@@ -211,10 +222,10 @@ export const brainGames = (ruleOfTheGame, game) => {
           console.log(`Let's try again, ${name}!`);
           return;
         } */
-        break;
-      case 'brainProgression':
-        progression(name);
-        /* const a = arrGenerator();
+      break;
+    case 'brainProgression':
+      progression(name);
+      /* const a = arrGenerator();
         const index = a.indexOf('..');
         const calcAnArrayElement = () => {
           if (index === 0) {
@@ -235,9 +246,9 @@ export const brainGames = (ruleOfTheGame, game) => {
           console.log(`Let's try again, ${name}!`);
           return;
         } */
-        break;
-      case 'brainGcd':
-        /* num1 = getRandomInt(0, 100);
+      break;
+    case 'brainGcd':
+      /* num1 = getRandomInt(0, 100);
         num2 = getRandomInt(0, 100);
         result = gcd(num1, num2);
         console.log(`Question: ${num1} ${num2}`);
@@ -249,9 +260,8 @@ export const brainGames = (ruleOfTheGame, game) => {
           console.log(`Let's try again, ${name}!`);
           return;
         } */
-        gcDivider(name);
-        break;
-    }
+      gcDivider(name);
+      break;
   }
   console.log(`Congratulations, ${name}!`);
 };
