@@ -80,7 +80,7 @@ const calc = (name) => {
     const num1 = getRandomInt(0, 100);
     const num2 = getRandomInt(0, 100);
     let result;
-    const operators = ['+', '-', '*', '/'];
+    const operators = ['+', '-', '*'];
     const op = operators[Math.floor(Math.random() * operators.length)];
     if (op === '/') {
     // eslint-disable-next-line no-eval
